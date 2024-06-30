@@ -6,6 +6,7 @@ import android.graphics.RectF
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.anna.recyclerviewgesturedemo.adapter.ItemTouchHelperAdapter
 import kotlin.math.abs
 import kotlin.math.max
 
@@ -17,8 +18,13 @@ abstract class SwipeButtonDrawHelper(
 ) {
 
     private var swipedPosition = -1
+
+    // 儲存與每個滑動項目位置關聯的按鈕
     private val buttonsBuffer: MutableMap<Int, List<SwipeButton>> = mutableMapOf()
+    // 儲存與每個滑動項目位置關聯的按鈕
     private val recoverQueue: ArrayList<Int> = arrayListOf()
+
+    // 定義在給定位置的每個項目要顯示的 SwipeButton 物件列表
     abstract fun instantiateButton(position: Int): List<SwipeButton>
 
     init {
@@ -45,9 +51,8 @@ abstract class SwipeButtonDrawHelper(
         actionState: Int,
         isCurrentlyActive: Boolean
     ) {
-
         val position = viewHolder.adapterPosition
-        var maxDX = 0.0f
+        val maxDX: Float
         val itemView = viewHolder.itemView
 
         if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
@@ -62,6 +67,8 @@ abstract class SwipeButtonDrawHelper(
                 drawButtons(c, buttons, itemView, maxDX)
                 // 使用 maxDX 限制左滑距離
                 super.onChildDraw(c, recyclerView, viewHolder, maxDX, dY, actionState, isCurrentlyActive)
+            } else {
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
             }
         } else {
             // 其他情況，保持原來的行為
@@ -104,7 +111,7 @@ abstract class SwipeButtonDrawHelper(
     private fun recoverSwipedItem() {
         if (recoverQueue.isNotEmpty()) {
             val position = recoverQueue.removeFirst()
-            recyclerView.adapter?.notifyItemChanged(position)
+            (recyclerView.adapter as? ItemTouchHelperAdapter)?.onItemShowButton(position)
         }
     }
 }
