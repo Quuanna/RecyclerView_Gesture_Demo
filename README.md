@@ -1,5 +1,9 @@
 # Android RecyclerView ItemTouchHelper Use Case
 
+![../RecyclerViewGestureDemo/usecase_drag.gif](..%2F..%2F..%2FDesktop%2Fusecase_swipe_button.gif)
+![../RecyclerViewGestureDemo/usecase_swipe.gif](..%2F..%2F..%2FDesktop%2Fusecase_swipe.gif)
+![../RecyclerViewGestureDemo/usecase_drag.gif](..%2F..%2F..%2FDesktop%2Fusecase_drag.gif)
+
 ## ItemTouchHelper
 
 - 可監聽 RecyclerView ViewHolder ItemView 的滑動交互行為，可以方向（向右或向左）或移動（向上或向下）
@@ -103,12 +107,6 @@
         }
     
     ```
-    
-
-### 2.1 滑動時顏色轉換
-
-### 2.2 滑動時 icon Gif
-
 ---
 
 ## UseCase 3. 滑動Item顯示Button
