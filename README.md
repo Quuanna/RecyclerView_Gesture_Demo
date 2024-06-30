@@ -1,8 +1,9 @@
 # Android RecyclerView ItemTouchHelper Use Case
 
-![../RecyclerViewGestureDemo/usecase_drag.gif](..%2F..%2F..%2FDesktop%2Fusecase_swipe_button.gif)
-![../RecyclerViewGestureDemo/usecase_swipe.gif](..%2F..%2F..%2FDesktop%2Fusecase_swipe.gif)
-![../RecyclerViewGestureDemo/usecase_drag.gif](..%2F..%2F..%2FDesktop%2Fusecase_drag.gif)
+<img src="https://github.com/Quuanna/RecyclerViewGestureDemo/assets/36694083/825a02df-70cf-4e34-870f-8f2ecc0223fb" width="250px">
+<img src="https://github.com/Quuanna/RecyclerViewGestureDemo/assets/36694083/c9d77540-406d-4e45-ab75-a771c72f28ff" width="250px">
+<img src="https://github.com/Quuanna/RecyclerViewGestureDemo/assets/36694083/8c0b98f7-084e-45c7-ba1e-3922c53948a7" width="250px">
+
 
 ## ItemTouchHelper
 
